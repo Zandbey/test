@@ -56,7 +56,7 @@ void CMFC414View::OnDraw(CDC* pDC)
 	// TODO: 在此处为本机数据添加绘制代码
 	//CString s =_T( "hello world");
 
-	pDC->TextOutW(200, 200,pDoc->s);
+	//pDC->TextOutW(200, 200,pDoc->s);
 	CString d = _T("张裕梅");
 	pDC->TextOutW(100, 100, d);
 	int cout = 0;
