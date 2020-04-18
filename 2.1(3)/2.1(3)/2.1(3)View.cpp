@@ -46,13 +46,14 @@ BOOL CMy213View::PreCreateWindow(CREATESTRUCT& cs)
 
 // CMy213View 绘制
 
-void CMy213View::OnDraw(CDC* /*pDC*/)
+void CMy213View::OnDraw(CDC* pDC)
 {
 	CMy213Doc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
-
+	CRect rect(30, 30, 300, 300);
+	pDC->Rectangle(&rect);
 	// TODO: 在此处为本机数据添加绘制代码
 }
 
