@@ -30,7 +30,11 @@ END_MESSAGE_MAP()
 CMy32实验3Doc::CMy32实验3Doc()
 {
 	// TODO: 在此添加一次性构造代码
-
+	A.SetRect(20, 20, 60, 50);
+	B.SetRect(50, 50, 100, 150);
+	C.SetRect(200, 200, 400, 300);
+	a = 1;
+	b = 2;
 }
 
 CMy32实验3Doc::~CMy32实验3Doc()

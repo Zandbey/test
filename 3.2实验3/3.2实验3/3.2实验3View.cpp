@@ -22,6 +22,8 @@
 IMPLEMENT_DYNCREATE(CMy32实验3View, CView)
 
 BEGIN_MESSAGE_MAP(CMy32实验3View, CView)
+	ON_WM_LBUTTONDOWN()
+	ON_WM_RBUTTONDOWN()
 END_MESSAGE_MAP()
 
 // CMy32实验3View 构造/析构
@@ -46,12 +48,15 @@ BOOL CMy32实验3View::PreCreateWindow(CREATESTRUCT& cs)
 
 // CMy32实验3View 绘制
 
-void CMy32实验3View::OnDraw(CDC* /*pDC*/)
+void CMy32实验3View::OnDraw(CDC* pDC)
 {
 	CMy32实验3Doc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
+	pDC->Rectangle(pDoc->A);
+	pDC->Rectangle(pDoc->B);
+	pDC->Rectangle(pDoc->C);
 
 	// TODO: 在此处为本机数据添加绘制代码
 }
@@ -79,3 +84,54 @@ CMy32实验3Doc* CMy32实验3View::GetDocument() const // 非调试版本是内联的
 
 
 // CMy32实验3View 消息处理程序
+
+
+void CMy32实验3View::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	CMy32实验3Doc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+
+	CClientDC dc(this);
+	CString s;
+	if (point.x > pDoc->A.left&&point.x<pDoc->A.right&&point.y>pDoc->A.top&&point.y < pDoc->A.bottom) {
+		pDoc->a = rand() % 30 + 5;
+		s.Format(_T("%d"), pDoc->a);
+		dc.TextOutW(point.x, point.y, s);
+	}
+
+	else if (point.x > pDoc->B.left&&point.x<pDoc->B.right&&point.y>pDoc->B.top&&point.y < pDoc->B.bottom) {
+		pDoc->b = rand() % 20 + 5;
+		s.Format(_T("%d"), pDoc->b);
+		dc.TextOutW(point.x, point.y, s);
+	}
+
+	else if (point.x > pDoc->C.left&&point.x<pDoc->C.right&&point.y>pDoc->C.top&&point.y < pDoc->C.bottom) {
+		s.Format(_T("%d+%d=%d"), pDoc->a, pDoc->b, pDoc->a + pDoc->b);
+		dc.TextOutW(point.x, point.y, s);
+	}
+	else dc.TextOutW(point.x, point.y, _T("点击无效"));
+
+	CView::OnLButtonDown(nFlags, point);
+}
+
+
+void CMy32实验3View::OnRButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	CMy32实验3Doc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+
+	CClientDC dc(this);
+	CString s;
+	if (point.x > pDoc->C.left&&point.x<pDoc->C.right&&point.y>pDoc->C.top&&point.y < pDoc->C.bottom) {
+		//pDoc->c = rand() % 10 + 5;
+		s.Format(_T("%d+%d=%d"),pDoc->a,pDoc->b, pDoc->a+pDoc->b);
+		dc.TextOutW(point.x, point.y, s);
+	}
+	CView::OnRButtonDown(nFlags, point);
+}
