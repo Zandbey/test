@@ -1,3 +1,26 @@
-﻿  3.1例子（3）（3）View.cpp
-  3.1例子（3）（3）.vcxproj -> D:\MYVC\3.1例子（3）（3）\Debug\3.1例子（3）（3）.exe
-  3.1例子（3）（3）.vcxproj -> D:\MYVC\3.1例子（3）（3）\Debug\3.1例子（3）（3）.pdb (Partial PDB)
+﻿生成启动时间为 2020/5/18 14:29:06。
+     1>项目“D:\MYVC\3.1例子（3）（3）\3.1例子（3）（3）\3.1例子（3）（3）.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\大二各科课件\visual c\插件\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"stdafx.h" /Fp"Debug\3.1例子（3）（3）.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\大二各科课件\visual c\插件\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\3.1例子（3）（3）.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "3.1例子（3）（3）.cpp" "3.1例子（3）（3）Doc.cpp" "3.1例子（3）（3）View.cpp" MainFrm.cpp
+         MainFrm.cpp
+         3.1例子（3）（3）View.cpp
+         3.1例子（3）（3）Doc.cpp
+         3.1例子（3）（3）.cpp
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0804" /IDebug\ /nologo /fo"Debug\3.1例子（3）（3）.res" "3.1例子（3）（3）.rc" 
+       Link:
+         D:\大二各科课件\visual c\插件\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MYVC\3.1例子（3）（3）\Debug\3.1例子（3）（3）.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\大二各科课件\visual c\插件\VC\Include\Manifest\dpiaware.manifest" /DEBUG:FASTLINK /PDB:"D:\MYVC\3.1例子（3）（3）\Debug\3.1例子（3）（3）.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MYVC\3.1例子（3）（3）\Debug\3.1例子（3）（3）.lib" /MACHINE:X86 "Debug\3.1例子（3）（3）.res"
+         "Debug\3.1例子（3）（3）.obj"
+         "Debug\3.1例子（3）（3）Doc.obj"
+         "Debug\3.1例子（3）（3）View.obj"
+         Debug\MainFrm.obj
+         Debug\stdafx.obj
+         3.1例子（3）（3）.vcxproj -> D:\MYVC\3.1例子（3）（3）\Debug\3.1例子（3）（3）.exe
+     1>已完成生成项目“D:\MYVC\3.1例子（3）（3）\3.1例子（3）（3）\3.1例子（3）（3）.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:14.47
