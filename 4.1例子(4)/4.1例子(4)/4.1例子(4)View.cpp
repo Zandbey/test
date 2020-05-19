@@ -22,6 +22,9 @@
 IMPLEMENT_DYNCREATE(CMy41例子4View, CView)
 
 BEGIN_MESSAGE_MAP(CMy41例子4View, CView)
+	ON_WM_LBUTTONDOWN()
+	ON_WM_LBUTTONUP()
+	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
 // CMy41例子4View 构造/析构
@@ -79,3 +82,35 @@ CMy41例子4Doc* CMy41例子4View::GetDocument() const // 非调试版本是内联的
 
 
 // CMy41例子4View 消息处理程序
+
+
+void CMy41例子4View::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	SetCapture();//捕获鼠标消息
+
+	CView::OnLButtonDown(nFlags, point);
+}
+
+
+void CMy41例子4View::OnLButtonUp(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	ReleaseCapture();//释放鼠标捕获
+	CView::OnLButtonUp(nFlags, point);
+}
+
+
+void CMy41例子4View::OnMouseMove(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	CString s;
+	s = "WM_MOUSEMOVE";
+	CClientDC dc(this);
+	dc.TextOutW(20, 20,s);
+	CString str;
+	str.Format(str, "X:%d  Y:%d", point.x, point.y);
+
+
+	CView::OnMouseMove(nFlags, point);
+}
