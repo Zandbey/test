@@ -22,6 +22,7 @@
 IMPLEMENT_DYNCREATE(CMy41例子2View, CView)
 
 BEGIN_MESSAGE_MAP(CMy41例子2View, CView)
+	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
 // CMy41例子2View 构造/析构
@@ -46,13 +47,15 @@ BOOL CMy41例子2View::PreCreateWindow(CREATESTRUCT& cs)
 
 // CMy41例子2View 绘制
 
-void CMy41例子2View::OnDraw(CDC* /*pDC*/)
+void CMy41例子2View::OnDraw(CDC* pDC)
 {
 	CMy41例子2Doc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
-
+	CPoint point(30, 30);
+	pDC->MoveTo(point);
+	pDC->LineTo(pDoc->a);
 	// TODO: 在此处为本机数据添加绘制代码
 }
 
@@ -79,3 +82,16 @@ CMy41例子2Doc* CMy41例子2View::GetDocument() const // 非调试版本是内联的
 
 
 // CMy41例子2View 消息处理程序
+
+
+void CMy41例子2View::OnMouseMove(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	CMy41例子2Doc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	pDoc->a = point;
+	InvalidateRect(NULL, FALSE);
+	CView::OnMouseMove(nFlags, point);
+}
