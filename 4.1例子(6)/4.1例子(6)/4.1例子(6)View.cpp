@@ -22,6 +22,7 @@
 IMPLEMENT_DYNCREATE(CMy41例子6View, CView)
 
 BEGIN_MESSAGE_MAP(CMy41例子6View, CView)
+	ON_WM_KEYDOWN()
 END_MESSAGE_MAP()
 
 // CMy41例子6View 构造/析构
@@ -46,12 +47,13 @@ BOOL CMy41例子6View::PreCreateWindow(CREATESTRUCT& cs)
 
 // CMy41例子6View 绘制
 
-void CMy41例子6View::OnDraw(CDC* /*pDC*/)
+void CMy41例子6View::OnDraw(CDC* pDC)
 {
 	CMy41例子6Doc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
+	pDC->Ellipse(pDoc->a);
 
 	// TODO: 在此处为本机数据添加绘制代码
 }
@@ -79,3 +81,34 @@ CMy41例子6Doc* CMy41例子6View::GetDocument() const // 非调试版本是内联的
 
 
 // CMy41例子6View 消息处理程序
+
+
+void CMy41例子6View::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	CMy41例子6Doc* pDoc = GetDocument();
+	CRect b;
+	GetClientRect(&b);
+	switch (nChar)
+	{
+	case 'L':
+		if (pDoc->a.left>0)
+		{
+			pDoc->a.left -= 10;
+			pDoc->a.right -= 10;
+
+		}
+	default:
+		break;
+	case 'R':
+if (pDoc->a.right<=(b.right-b.left))
+{
+	pDoc->a.left += 10;
+	pDoc->a.right += 10;
+	
+}
+break;
+	}
+	InvalidateRect(NULL, TRUE);
+	CView::OnKeyDown(nChar, nRepCnt, nFlags);
+}

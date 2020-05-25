@@ -34,7 +34,7 @@ public:
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;
 #endif
-
+	CRect a;
 protected:
 
 // 生成的消息映射函数

@@ -30,7 +30,10 @@ END_MESSAGE_MAP()
 CMy41例子6Doc::CMy41例子6Doc()
 {
 	// TODO: 在此添加一次性构造代码
-
+	a.left = 50;
+	a.right = 120;
+	a.top = 50;
+	a.bottom = 120;
 }
 
 CMy41例子6Doc::~CMy41例子6Doc()
