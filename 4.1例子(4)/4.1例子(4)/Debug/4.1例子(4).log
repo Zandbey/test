@@ -1,4 +1,4 @@
-﻿生成启动时间为 2020/5/19 23:33:53。
+﻿生成启动时间为 2020/5/25 15:28:56。
      1>项目“D:\MYVC\4.1例子(4)\4.1例子(4)\4.1例子(4).vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\大二各科课件\visual c\插件\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\4.1例子(4).pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "4.1例子(4)View.cpp"
@@ -15,4 +15,4 @@
 
 已成功生成。
 
-已用时间 00:00:02.49
+已用时间 00:00:07.11
